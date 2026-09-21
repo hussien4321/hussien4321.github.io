@@ -1,0 +1,647 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hussien Elmi — Flutter Developer</title>
+<meta name="description" content="Hussien Elmi — senior Flutter developer in Seoul. Five apps built end to end between 2018 and 2026: client, backend and release, solo.">
+<meta name="author" content="Hussien Elmi">
+<meta property="og:title" content="Hussien Elmi — Flutter Developer">
+<meta property="og:description" content="Five apps built end to end between 2018 and 2026 — client, backend and release, solo.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=JetBrains+Mono:wght@400;500;700&family=Spline+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ---------- tokens: complete light palette on bare :root ---------- */
+:root{
+  --bg:#E8EBF1;
+  --surface:#FFFFFF;
+  --surface-2:#F1F4F9;
+  --plate:#DFE5F0;           /* the surface a screenshot sits on */
+  --ink:#0D1526;
+  --ink-2:#48536D;
+  --ink-3:#6C7791;
+  --line:#CAD2E0;
+  --line-2:#DFE4EE;
+  --accent:#A8540A;
+  --accent-ink:#FFFFFF;
+  --signal:#0A6B59;
+  --signal-bg:#D8ECE6;
+  --shadow:0 1px 2px rgba(13,21,38,.06), 0 8px 24px -12px rgba(13,21,38,.22);
+  --focus:#A8540A;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0A1020;
+    --surface:#121A2B;
+    --surface-2:#172134;
+    --plate:#060B16;
+    --ink:#E7ECF6;
+    --ink-2:#98A4BC;
+    --ink-3:#77839B;
+    --line:#26314A;
+    --line-2:#1D2639;
+    --accent:#F0A340;
+    --accent-ink:#0A1020;
+    --signal:#48DCBB;
+    --signal-bg:#0E2C2A;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 14px 32px -16px rgba(0,0,0,.7);
+    --focus:#F0A340;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0A1020;
+  --surface:#121A2B;
+  --surface-2:#172134;
+  --plate:#060B16;
+  --ink:#E7ECF6;
+  --ink-2:#98A4BC;
+  --ink-3:#77839B;
+  --line:#26314A;
+  --line-2:#1D2639;
+  --accent:#F0A340;
+  --accent-ink:#0A1020;
+  --signal:#48DCBB;
+  --signal-bg:#0E2C2A;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 14px 32px -16px rgba(0,0,0,.7);
+  --focus:#F0A340;
+  color-scheme:dark;
+}
+
+/* ---------- base ---------- */
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:"Spline Sans","Helvetica Neue",Arial,sans-serif;
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--focus);outline-offset:3px;border-radius:2px}
+
+.wrap{max-width:1080px;margin-inline:auto;padding-inline:clamp(18px,5vw,44px)}
+
+.display{font-family:"Bricolage Grotesque","Spline Sans",sans-serif;font-weight:800;letter-spacing:-.022em;line-height:1.02;text-wrap:balance}
+.mono{font-family:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;font-variant-numeric:tabular-nums}
+.eyebrow{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:11.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
+
+/* ---------- top bar ---------- */
+.topbar{
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding-block:20px 0;
+}
+.wordmark{font-family:"JetBrains Mono",monospace;font-size:12.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2)}
+.wordmark b{color:var(--accent);font-weight:700}
+.themetoggle{
+  font-family:"JetBrains Mono",monospace;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+  background:var(--surface);color:var(--ink-2);
+  border:1px solid var(--line);border-radius:999px;
+  padding:7px 14px;cursor:pointer;line-height:1;
+}
+.themetoggle:hover{color:var(--ink);border-color:var(--ink-3)}
+
+/* ---------- masthead ---------- */
+.masthead{padding-block:clamp(40px,7vw,78px) clamp(30px,5vw,50px)}
+.masthead h1{
+  font-family:"Bricolage Grotesque","Spline Sans",sans-serif;font-weight:800;
+  font-size:clamp(40px,8.2vw,76px);line-height:.98;letter-spacing:-.03em;
+  margin:0 0 6px;
+}
+.role{
+  font-family:"JetBrains Mono",monospace;font-size:clamp(12px,2.4vw,14px);
+  letter-spacing:.12em;text-transform:uppercase;color:var(--accent);
+  margin:0 0 30px;
+}
+.thesis{
+  font-family:"Bricolage Grotesque","Spline Sans",sans-serif;font-weight:600;
+  font-size:clamp(21px,3.4vw,31px);line-height:1.22;letter-spacing:-.018em;
+  max-width:19ch;margin:0 0 22px;text-wrap:balance;
+}
+.thesis em{font-style:normal;color:var(--accent)}
+.intro{max-width:60ch;color:var(--ink-2);margin:0 0 4px;font-size:clamp(15px,2vw,17px)}
+.intro + .intro{margin-top:12px}
+.intro strong{color:var(--ink);font-weight:500}
+
+.ledger{
+  display:flex;flex-wrap:wrap;gap:8px 10px;align-items:center;
+  margin-top:30px;font-size:12px;letter-spacing:.06em;color:var(--ink-3);
+}
+.ledger span{display:inline-flex;align-items:center;gap:10px}
+.ledger span::after{content:"";width:3px;height:3px;border-radius:50%;background:var(--line);}
+.ledger span:last-child::after{display:none}
+
+.contactrow{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.cta{
+  display:inline-flex;align-items:center;gap:9px;
+  font-family:"JetBrains Mono",monospace;font-size:12.5px;letter-spacing:.04em;
+  padding:11px 17px;border-radius:8px;text-decoration:none;line-height:1;
+  border:1px solid var(--line);background:var(--surface);color:var(--ink);
+  transition:border-color .15s ease, transform .15s ease;
+}
+.cta:hover{border-color:var(--accent);transform:translateY(-1px)}
+.cta-primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink);font-weight:500}
+.cta-primary:hover{border-color:var(--accent);filter:brightness(1.06)}
+.cta svg{width:14px;height:14px;flex:none}
+
+/* ---------- index ---------- */
+.index{border-top:1px solid var(--line);padding-block:26px 0}
+.index h2{margin:0 0 14px}
+.index ol{list-style:none;margin:0;padding:0;display:grid;gap:1px;background:var(--line-2);border:1px solid var(--line-2);border-radius:10px;overflow:hidden}
+.index li{background:var(--bg)}
+.index a{
+  display:grid;grid-template-columns:78px minmax(0,1fr);gap:4px 18px;align-items:baseline;
+  padding:13px 16px;text-decoration:none;transition:background .15s ease;
+}
+.index a:hover{background:var(--surface-2)}
+.index a:hover .ix-name{color:var(--accent)}
+.ix-year{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.ix-name{font-weight:600;font-size:16px;transition:color .15s ease}
+.ix-what{grid-column:2;font-size:14px;color:var(--ink-2);line-height:1.45}
+
+/* ---------- entries ---------- */
+.log{padding-block:clamp(48px,7vw,84px) 0}
+.entry{
+  position:relative;
+  display:grid;
+  grid-template-columns:104px minmax(0,1fr);
+  column-gap:clamp(22px,4vw,44px);
+  padding-block:clamp(38px,6vw,64px);
+  border-top:1px solid var(--line);
+}
+.entry:first-child{border-top:none;padding-top:0}
+.entry > *{grid-column:2;min-width:0}
+.entry::before{
+  content:"";position:absolute;left:104px;top:0;bottom:0;width:1px;background:var(--line);
+}
+.entry:last-child::before{background:linear-gradient(var(--line) 55%, transparent)}
+.rail{grid-column:1;padding-right:clamp(12px,2vw,20px)}
+.rail-year{font-family:"JetBrains Mono",monospace;font-weight:700;font-size:15px;color:var(--accent);letter-spacing:.01em;font-variant-numeric:tabular-nums}
+.rail-n{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--ink-3);margin-top:4px;letter-spacing:.1em}
+
+.entry-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 14px;margin-bottom:10px}
+.entry-head h3{
+  font-family:"Bricolage Grotesque","Spline Sans",sans-serif;font-weight:800;
+  font-size:clamp(28px,5vw,42px);line-height:1.02;letter-spacing:-.025em;margin:0;
+}
+.chip{
+  font-family:"JetBrains Mono",monospace;font-size:10.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;
+  padding:5px 9px;border-radius:5px;line-height:1;white-space:nowrap;
+  background:var(--surface-2);color:var(--ink-3);border:1px solid var(--line-2);
+}
+.chip-live{background:var(--signal-bg);color:var(--signal);border-color:transparent}
+.lede{font-size:clamp(16px,2.2vw,19px);color:var(--ink-2);max-width:58ch;margin:0 0 26px;line-height:1.45}
+
+/* screens */
+.screens{margin:0 0 26px}
+.screens.mid .shot{max-width:512px}
+/* host and phone, sized so both land on the same height at any width */
+.screens.pair{display:grid;grid-template-columns:5fr 1fr;gap:12px;align-items:start}
+
+/* a tall hero sits beside its notes rather than above a dead column */
+.entry-main{
+  display:grid;grid-template-columns:300px minmax(0,1fr);
+  gap:clamp(22px,3.5vw,40px);align-items:start;margin-bottom:26px;
+}
+.entry-main > .shot{margin:0}
+.entry-main .entry-body{grid-template-columns:minmax(0,1fr);gap:22px}
+.entry-main .facts{grid-template-columns:repeat(auto-fit,minmax(158px,1fr));column-gap:20px}
+.shot{
+  margin:0;background:var(--plate);border:1px solid var(--line);border-radius:12px;overflow:hidden;
+  box-shadow:var(--shadow);
+}
+.shot img{width:100%}
+.shot button{
+  display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in;line-height:0;
+}
+.strip{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(130px,190px));justify-content:start;margin:0 0 26px}
+.strip.landscape{grid-template-columns:repeat(auto-fit,minmax(200px,268px))}
+.strip .shot{border-radius:9px;box-shadow:none}
+
+.entry-body{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:clamp(22px,3.5vw,40px);align-items:start}
+.notes{list-style:none;margin:0;padding:0;display:grid;gap:11px}
+.notes li{position:relative;padding-left:20px;color:var(--ink);font-size:15.5px;line-height:1.55}
+.notes code{font-size:.92em;background:var(--surface-2);border:1px solid var(--line-2);border-radius:4px;padding:1px 5px}
+.notes li::before{
+  content:"";position:absolute;left:0;top:.62em;width:7px;height:1.5px;background:var(--accent);
+}
+
+.facts{margin:0;padding:16px 18px;background:var(--surface);border:1px solid var(--line);border-radius:10px;display:grid;gap:12px}
+.facts > div{display:grid;gap:2px}
+.facts dt{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-3)}
+.facts dd{margin:0;font-family:"JetBrains Mono",monospace;font-size:13px;line-height:1.45;color:var(--ink);font-variant-numeric:tabular-nums}
+
+.entry-foot{display:flex;flex-wrap:wrap;gap:16px 24px;align-items:center;justify-content:space-between;margin-top:26px}
+.stack{list-style:none;display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0}
+.stack li{
+  font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--ink-2);
+  border:1px solid var(--line);border-radius:5px;padding:4px 8px;line-height:1.3;background:var(--surface);
+}
+.links{display:flex;flex-wrap:wrap;gap:8px 18px}
+.links a{
+  font-family:"JetBrains Mono",monospace;font-size:12.5px;text-decoration:none;color:var(--accent);
+  display:inline-flex;align-items:center;gap:7px;border-bottom:1px solid transparent;padding-bottom:1px;
+}
+.links a:hover{border-bottom-color:var(--accent)}
+.links svg{width:12px;height:12px;flex:none}
+
+/* ---------- footer ---------- */
+.foot{border-top:1px solid var(--line);margin-top:clamp(50px,7vw,80px);padding-block:clamp(36px,6vw,58px) 46px}
+.foot h2{font-family:"Bricolage Grotesque","Spline Sans",sans-serif;font-weight:800;font-size:clamp(26px,5vw,40px);letter-spacing:-.025em;margin:0 0 8px;line-height:1.05}
+.foot p{color:var(--ink-2);max-width:48ch;margin:0 0 24px}
+.footgrid{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));max-width:760px}
+.footgrid a{
+  display:flex;align-items:center;gap:12px;text-decoration:none;
+  background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px;
+  transition:border-color .15s ease;
+}
+.footgrid a:hover{border-color:var(--accent)}
+.footgrid svg{width:16px;height:16px;flex:none;color:var(--accent)}
+.fk{display:block;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-3)}
+.fv{display:block;font-size:14.5px;color:var(--ink);word-break:break-word}
+.colophon{margin-top:34px;font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--ink-3);line-height:1.7}
+.colophon a{color:var(--ink-2)}
+
+/* ---------- lightbox ---------- */
+dialog.lb{
+  border:0;padding:0;background:transparent;max-width:100vw;max-height:100vh;width:100%;height:100%;
+  margin:0;overflow:auto;
+}
+dialog.lb::backdrop{background:rgba(6,11,22,.9)}
+.lb-inner{min-height:100%;display:flex;align-items:center;justify-content:center;padding:clamp(16px,4vw,48px)}
+.lb-inner img{max-width:100%;max-height:88vh;width:auto;border-radius:10px;box-shadow:0 30px 80px -20px rgba(0,0,0,.8)}
+.lb-close{
+  position:fixed;top:14px;right:14px;z-index:2;
+  font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+  background:#121A2B;color:#E7ECF6;border:1px solid #33405C;border-radius:999px;padding:9px 15px;cursor:pointer;
+}
+.lb-close:hover{border-color:#F0A340;color:#F0A340}
+
+/* ---------- responsive ---------- */
+@media (max-width:860px){
+  .entry-body{grid-template-columns:minmax(0,1fr)}
+  .entry-main{grid-template-columns:minmax(0,1fr)}
+  .entry-main > .shot{max-width:300px}
+}
+@media (max-width:720px){
+  .entry{grid-template-columns:minmax(0,1fr);row-gap:0}
+  .entry > *{grid-column:1}
+  .entry::before{display:none}
+  .rail{grid-column:1;padding-right:0;margin-bottom:12px}
+  .rail-inner{display:flex;align-items:baseline;gap:12px}
+  .rail-n{margin-top:0}
+  .screens.pair{grid-template-columns:minmax(0,1fr)}
+  .screens.pair .shot:last-child{max-width:220px}
+  .index a{grid-template-columns:minmax(0,1fr)}
+  .ix-what{grid-column:1}
+  .ix-year{order:-1}
+}
+@media (prefers-reduced-motion: reduce){
+  *{animation:none !important;transition:none !important}
+  .cta:hover{transform:none}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="topbar">
+    <div class="wordmark">HE<b>.</b></div>
+    <button class="themetoggle" id="themetoggle" type="button" aria-label="Switch colour theme">Theme</button>
+  </div>
+
+  <header class="masthead">
+    <h1 class="display">Hussien Elmi</h1>
+    <p class="role">Senior Flutter Developer · Seoul</p>
+
+    <p class="thesis">Five apps, built <em>end to end</em>, alone.</p>
+
+    <p class="intro">Outside of work I build apps end to end — client, backend and release — to explore areas I haven't covered professionally, particularly across gaming and personal development.</p>
+    <p class="intro"><strong>Every project below was designed and developed solely by me.</strong> Engine, UI, animation, server, store listing, deploy.</p>
+
+    <p class="ledger mono">
+      <span>2018 → 2026</span>
+      <span>5 apps</span>
+      <span>Flutter &amp; TypeScript</span>
+      <span>iOS · Android · Web</span>
+    </p>
+
+    <div class="contactrow">
+      <a class="cta cta-primary" href="mailto:hussien.elmi@outlook.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+        hussien.elmi@outlook.com
+      </a>
+      <a class="cta" href="https://github.com/hussien4321" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.3 1.9 1.3 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.6 4.7 18.6 5 18.6 5c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></svg>
+        github.com/hussien4321
+      </a>
+      <a class="cta" href="tel:+821099357269">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+        +82 10-9935-7269
+      </a>
+    </div>
+  </header>
+
+  <nav class="index" aria-label="Projects">
+    <h2 class="eyebrow">The build log</h2>
+    <ol>
+      <li><a href="#partybox"><span class="ix-year">2026</span><span class="ix-name">Partybox</span><span class="ix-what">A party-game platform: the game runs on the TV, everyone plays from their own phone.</span></a></li>
+      <li><a href="#wordvs"><span class="ix-year">2024</span><span class="ix-name">Word VS</span><span class="ix-what">Wordle with a two-player mode — same word, live race.</span></a></li>
+      <li><a href="#firefit"><span class="ix-year">2019–24</span><span class="ix-name">FireFit</span><span class="ix-what">A social platform for sharing and rating outfits, with its own backend.</span></a></li>
+      <li><a href="#fastball"><span class="ix-year">2018–21</span><span class="ix-name">Fastball Battle</span><span class="ix-what">An endless baseball game on a hand-rolled sprite engine.</span></a></li>
+      <li><a href="#todo"><span class="ix-year">2018</span><span class="ix-name">Todo Today</span><span class="ix-what">A to-do app where every task expires in 24 hours.</span></a></li>
+    </ol>
+  </nav>
+
+  <main class="log">
+
+    <!-- ============ PARTYBOX ============ -->
+    <article class="entry" id="partybox">
+      <div class="rail"><div class="rail-inner"><div class="rail-year">2026</div><div class="rail-n">01</div></div></div>
+
+      <div class="entry-head">
+        <h3>Partybox</h3>
+        <span class="chip chip-live">In progress</span>
+      </div>
+      <p class="lede">A web platform for party games. The game itself runs on whatever screen the room is already looking at — a TV, a laptop — and every player uses their own phone as a controller.</p>
+
+      <div class="screens pair">
+        <figure class="shot"><button type="button" data-zoom><img src="assets/partybox-host.webp" width="1400" height="584" alt="The Partybox host screen on a shared display: a question and four answer cards."></button></figure>
+        <figure class="shot"><button type="button" data-zoom><img src="assets/partybox-client.webp" width="560" height="1172" alt="The Partybox player app on a phone, showing three answer options."></button></figure>
+      </div>
+
+      <div class="entry-body">
+        <ul class="notes">
+          <li>Architected the platform so each game is a <strong>self-contained module</strong> that plugs into shared infrastructure — lobby, networking, player state, screen flow. New games drop in without touching the core.</li>
+          <li>Designed the host↔client layer so a big screen and a pocketful of phones exchange state and drive game logic in real time, through a single document and no direct connection.</li>
+          <li>Built per-state animation with GSAP, so every phase of every game — prompt, wait, reveal, score — gets its own beat.</li>
+          <li>Designed the party games themselves, drawing on years of board gaming.</li>
+          <li>Used Claude Code throughout to move faster and ship updates in a single sitting.</li>
+        </ul>
+        <dl class="facts">
+          <div><dt>Playable games</dt><dd>4 — and counting</dd></div>
+          <div><dt>Shape</dt><dd>2 apps, 1 shared document</dd></div>
+          <div><dt>Code</dt><dd>~22,000 lines TypeScript</dd></div>
+          <div><dt>Engine tests</dt><dd>12 suites, rules only</dd></div>
+        </dl>
+      </div>
+
+      <div class="entry-foot">
+        <ul class="stack"><li>React</li><li>TypeScript</li><li>XState</li><li>Firestore</li><li>GSAP</li><li>RxJS</li><li>Tailwind</li><li>Vite</li></ul>
+        <div class="links">
+          <a href="https://partybox-host.web.app" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>Play the demo</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- ============ WORD VS ============ -->
+    <article class="entry" id="wordvs">
+      <div class="rail"><div class="rail-inner"><div class="rail-year">2024</div><div class="rail-n">02</div></div></div>
+
+      <div class="entry-head">
+        <h3>Word VS</h3>
+        <span class="chip">Flutter · Firestore</span>
+      </div>
+      <p class="lede">Wordle, with the bit it was missing: a second player. Both of you get the same word at the same time and race for it.</p>
+
+
+      <div class="entry-main">
+        <figure class="shot"><button type="button" data-zoom><img src="assets/wordvs.webp" width="620" height="1344" loading="lazy" alt="Word VS: two boards side by side, labelled You vs Friend."></button></figure>
+        <div class="entry-body">
+          <ul class="notes">
+            <li>Built the guessing mechanic and the tile-reveal animation in Flutter — the flip that colours each letter is the whole feel of the game, so it got the attention.</li>
+            <li>Added real-time networking for head-to-head play, with both boards resolving against one shared session.</li>
+            <li>Laid the game out as a <strong>BLoC-per-mode</strong> architecture over repository interfaces, so the solo and two-player screens share one engine and differ only in what drives it.</li>
+            <li>Scheduled automatic cleanup of stale sessions every three days, to keep storage costs flat as the game sits in the store.</li>
+          </ul>
+          <dl class="facts">
+            <div><dt>Answer words</dt><dd>2,315</dd></div>
+            <div><dt>Accepted guesses</dt><dd>12,972</dd></div>
+            <div><dt>State</dt><dd>flutter_bloc + freezed</dd></div>
+            <div><dt>Platforms</dt><dd>iOS, Android, Web</dd></div>
+          </dl>
+        </div>
+      </div>
+
+      <div class="entry-foot">
+        <ul class="stack"><li>Flutter</li><li>Dart</li><li>flutter_bloc</li><li>freezed</li><li>Firestore</li><li>Animations</li></ul>
+        <div class="links">
+          <a href="https://github.com/hussien4321/Word_VS_Flutter" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.3 1.9 1.3 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.6 4.7 18.6 5 18.6 5c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></svg>Source on GitHub</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- ============ FIREFIT ============ -->
+    <article class="entry" id="firefit">
+      <div class="rail"><div class="rail-inner"><div class="rail-year">2019–24</div><div class="rail-n">03</div></div></div>
+
+      <div class="entry-head">
+        <h3>FireFit</h3>
+        <span class="chip">Full stack · Retired</span>
+      </div>
+      <p class="lede">A social platform for fashion: post the fit, the room rates it out of five flames. The biggest of these by some distance — a full social graph, a media pipeline and a custom backend behind it.</p>
+
+      <div class="entry-main">
+        <figure class="shot"><button type="button" data-zoom><img src="assets/firefit.webp" width="620" height="1222" loading="lazy" alt="A FireFit profile screen showing followers, outfits and flames."></button></figure>
+        <div class="entry-body">
+          <ul class="notes">
+            <li>Follow system with push notifications, so anyone you follow posting a new look reaches you on the lock screen.</li>
+            <li>Weekly and monthly trending feeds surfacing the best-rated looks over a rolling window.</li>
+            <li>Custom search by style, gender and country; a personal lookbook for saving favourites.</li>
+            <li>Wrote the <strong>backend as well as the app</strong> — 33 callable Cloud Functions in TypeScript over Google Cloud SQL, rather than letting the client talk to the database.</li>
+            <li>Media pipeline: uploads are thumbnailed server-side on arrival, so a feed of hundreds of outfits never pulls a full-size photo.</li>
+          </ul>
+          <dl class="facts">
+            <div><dt>App</dt><dd>196 Dart files, ~22,000 lines</dd></div>
+            <div><dt>Backend</dt><dd>33 Cloud Functions, TypeScript</dd></div>
+            <div><dt>Data</dt><dd>Google Cloud SQL (MySQL)</dd></div>
+            <div><dt>Lifespan</dt><dd>Shipped, ran, retired</dd></div>
+          </dl>
+        </div>
+      </div>
+
+      <div class="strip">
+        <figure class="shot"><button type="button" data-zoom><img src="assets/firefit-1.webp" width="380" height="684" loading="lazy" alt="FireFit: the Hottest Fits feed."></button></figure>
+        <figure class="shot"><button type="button" data-zoom><img src="assets/firefit-2.webp" width="380" height="684" loading="lazy" alt="FireFit: rating an outfit out of five flames."></button></figure>
+        <figure class="shot"><button type="button" data-zoom><img src="assets/firefit-3.webp" width="380" height="684" loading="lazy" alt="FireFit: personal lookbooks."></button></figure>
+        <figure class="shot"><button type="button" data-zoom><img src="assets/firefit-4.webp" width="380" height="684" loading="lazy" alt="FireFit: another user's profile with a Follow button."></button></figure>
+      </div>
+
+      <div class="entry-foot">
+        <ul class="stack"><li>Flutter</li><li>Firebase Auth</li><li>FCM</li><li>Cloud Storage</li><li>Cloud Functions</li><li>Cloud SQL</li><li>TypeScript</li><li>Sharp</li><li>SendGrid</li></ul>
+        <div class="links">
+          <a href="https://github.com/hussien4321/FireFit-Flutter" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.3 1.9 1.3 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.6 4.7 18.6 5 18.6 5c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></svg>App source</a>
+          <a href="https://github.com/hussien4321/mira_mira_back_end" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.3 1.9 1.3 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.6 4.7 18.6 5 18.6 5c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></svg>Backend source</a>
+          <a href="https://skilful-tape-240120.web.app" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>Site</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- ============ FASTBALL ============ -->
+    <article class="entry" id="fastball">
+      <div class="rail"><div class="rail-inner"><div class="rail-year">2018–21</div><div class="rail-n">04</div></div></div>
+
+      <div class="entry-head">
+        <h3>Fastball Battle</h3>
+        <span class="chip">Game · CustomPainter</span>
+      </div>
+      <p class="lede">An endless baseball game: the pitch comes in, you get one tap to swing, three misses and you're out. Written without a game engine — every frame is drawn by hand onto a Flutter canvas.</p>
+
+      <div class="screens mid">
+        <figure class="shot"><button type="button" data-zoom><img src="assets/fastball.webp" width="512" height="395" loading="lazy" alt="Fastball Battle store art: can you hit the ball while it's moving fast?"></button></figure>
+      </div>
+      <div class="strip landscape">
+        <figure class="shot"><button type="button" data-zoom><img src="assets/fastball-1.webp" width="560" height="315" loading="lazy" alt="Fastball Battle: a new high score on the beach stage."></button></figure>
+        <figure class="shot"><button type="button" data-zoom><img src="assets/fastball-2.webp" width="560" height="315" loading="lazy" alt="Fastball Battle: the colosseum stage."></button></figure>
+        <figure class="shot"><button type="button" data-zoom><img src="assets/fastball-3.webp" width="560" height="315" loading="lazy" alt="Fastball Battle: the desert stage."></button></figure>
+      </div>
+
+      <div class="entry-body">
+        <ul class="notes">
+          <li>Built a <strong>custom sprite-animation engine</strong> that composes each character from several image layers and drives them through a <code class="mono">CustomPainter</code> render loop — idle, swing, hit and death states for both fighters, plus the ball and the collision.</li>
+          <li>Added unlockable characters and stages, so a run that ends badly still moves you towards something.</li>
+          <li>Wired in-app purchases and ads around the loop, and shipped it.</li>
+        </ul>
+        <dl class="facts">
+          <div><dt>Rendering</dt><dd>CustomPainter, no engine</dd></div>
+          <div><dt>Rig</dt><dd>Layered sprites per state</dd></div>
+          <div><dt>Loop</dt><dd>One tap, three strikes</dd></div>
+          <div><dt>Monetised</dt><dd>IAP + ads</dd></div>
+        </dl>
+      </div>
+
+      <div class="entry-foot">
+        <ul class="stack"><li>Flutter</li><li>Dart</li><li>CustomPainter</li><li>audioplayers</li><li>In-app purchases</li><li>AdMob</li></ul>
+        <div class="links">
+          <a href="https://github.com/hussien4321/Fastball_battle_flutter" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.3 1.9 1.3 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.6 4.7 18.6 5 18.6 5c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></svg>Source on GitHub</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- ============ TODO TODAY ============ -->
+    <article class="entry" id="todo">
+      <div class="rail"><div class="rail-inner"><div class="rail-year">2018</div><div class="rail-n">05</div></div></div>
+
+      <div class="entry-head">
+        <h3>Todo Today</h3>
+        <span class="chip">The first one</span>
+      </div>
+      <p class="lede">A to-do app with one rule: every task you add is given exactly 24 hours. The clock starts the moment you write it down, and at the end of the day it's gone either way.</p>
+
+      <div class="entry-main">
+        <figure class="shot"><button type="button" data-zoom><img src="assets/todo.webp" width="288" height="512" loading="lazy" alt="Todo Today: tasks each with a 24-hour countdown bar."></button></figure>
+        <div class="entry-body">
+          <ul class="notes">
+            <li>An animated 24-hour countdown on every task — the deadline is the product, so it had to be the thing you see.</li>
+            <li>End-of-day local notifications nudging you towards whatever is still unticked.</li>
+            <li>Performance graphs built from accumulated history, so a week of the app is readable as a shape rather than a list.</li>
+            <li>Everything on-device in SQLite: no account, no server, no sync to wait for.</li>
+          </ul>
+          <dl class="facts">
+            <div><dt>Storage</dt><dd>SQLite, on device</dd></div>
+            <div><dt>Reminders</dt><dd>Local notifications</dd></div>
+            <div><dt>History</dt><dd>Charted per task</dd></div>
+            <div><dt>Year</dt><dd>2018 — where this started</dd></div>
+          </dl>
+        </div>
+      </div>
+
+      <div class="strip">
+        <figure class="shot"><button type="button" data-zoom><img src="assets/todo-1.webp" width="380" height="507" loading="lazy" alt="Todo Today: the task list with countdown bars."></button></figure>
+        <figure class="shot"><button type="button" data-zoom><img src="assets/todo-2.webp" width="380" height="507" loading="lazy" alt="Todo Today: picking a saved task."></button></figure>
+      </div>
+
+      <div class="entry-foot">
+        <ul class="stack"><li>Flutter</li><li>Dart</li><li>SQLite</li><li>Local notifications</li><li>charts_flutter</li><li>AdMob</li><li>In-app purchases</li></ul>
+        <div class="links">
+          <a href="https://github.com/hussien4321/Todo-Today-Flutter" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.3 1.9 1.3 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.6 4.7 18.6 5 18.6 5c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></svg>Source on GitHub</a>
+        </div>
+      </div>
+    </article>
+
+  </main>
+
+  <footer class="foot" id="contact">
+    <h2 class="display">Get in touch</h2>
+    <p>Currently building Partybox. Happy to talk about Flutter, real-time multiplayer, or anything on this page.</p>
+    <div class="footgrid">
+      <a href="mailto:hussien.elmi@outlook.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+        <span><span class="fk">Email</span><span class="fv">hussien.elmi@outlook.com</span></span>
+      </a>
+      <a href="tel:+821099357269">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+        <span><span class="fk">Phone</span><span class="fv">+82 10-9935-7269</span></span>
+      </a>
+      <a href="https://github.com/hussien4321" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.3 1.9 1.3 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.6 4.7 18.6 5 18.6 5c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></svg>
+        <span><span class="fk">GitHub</span><span class="fv">hussien4321</span></span>
+      </a>
+    </div>
+    <p class="colophon">
+      Hussien Elmi · Seoul · Every project on this page was designed and built solo.<br>
+      Set in Bricolage Grotesque, Spline Sans and JetBrains Mono.
+    </p>
+  </footer>
+
+</div>
+
+<dialog class="lb" id="lightbox" aria-label="Enlarged screenshot">
+  <button class="lb-close" id="lbclose" type="button">Close ✕</button>
+  <div class="lb-inner"><img id="lbimg" src="" alt=""></div>
+</dialog>
+
+<script>
+(function(){
+  "use strict";
+  var root = document.documentElement;
+
+  /* theme toggle — persisted per browser, tolerant of blocked storage */
+  function stored(){ try { return localStorage.getItem("he-theme"); } catch(e){ return null; } }
+  var saved = stored();
+  if (saved === "dark" || saved === "light") root.setAttribute("data-theme", saved);
+
+  function current(){
+    var set = root.getAttribute("data-theme");
+    if (set) return set;
+    return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  }
+  var btn = document.getElementById("themetoggle");
+  function label(){ btn.textContent = current() === "dark" ? "Light" : "Dark"; }
+  label();
+  btn.addEventListener("click", function(){
+    var next = current() === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem("he-theme", next); } catch(e){}
+    label();
+  });
+
+  /* lightbox */
+  var lb = document.getElementById("lightbox");
+  var lbimg = document.getElementById("lbimg");
+  var supported = typeof lb.showModal === "function";
+  document.querySelectorAll("[data-zoom]").forEach(function(b){
+    if (!supported) { b.style.cursor = "default"; return; }
+    b.addEventListener("click", function(){
+      var img = b.querySelector("img");
+      lbimg.src = img.currentSrc || img.src;
+      lbimg.alt = img.alt;
+      lb.showModal();
+    });
+  });
+  document.getElementById("lbclose").addEventListener("click", function(){ lb.close(); });
+  lb.addEventListener("click", function(e){ if (e.target === lb || e.target.classList.contains("lb-inner")) lb.close(); });
+  lb.addEventListener("close", function(){ lbimg.src = ""; });
+})();
+</script>
+
+</body>
+</html>
