@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Hussien Elmi — Flutter Developer</title>
-<meta name="description" content="Hussien Elmi — senior Flutter developer in Seoul. Five apps built end to end between 2018 and 2026: client, backend and release, solo.">
+<title>Hussien Elmi — Senior Flutter Developer</title>
+<meta name="description" content="Hussien Elmi — senior Flutter developer. Five apps built end to end between 2018 and 2026: client, backend and release.">
 <meta name="author" content="Hussien Elmi">
-<meta property="og:title" content="Hussien Elmi — Flutter Developer">
-<meta property="og:description" content="Five apps built end to end between 2018 and 2026 — client, backend and release, solo.">
+<meta property="og:title" content="Hussien Elmi — Senior Flutter Developer">
+<meta property="og:description" content="Five apps built end to end between 2018 and 2026 — client, backend and release.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -320,12 +320,11 @@ dialog.lb::backdrop{background:rgba(6,11,22,.9)}
 
   <header class="masthead">
     <h1 class="display">Hussien Elmi</h1>
-    <p class="role">Senior Flutter Developer · Seoul</p>
+    <p class="role">Senior Flutter Developer · 8+ years commercial experience</p>
 
-    <p class="thesis">Five apps, built <em>end to end</em>, alone.</p>
+    <p class="thesis">Five apps, built <em>end to end</em>.</p>
 
     <p class="intro">Outside of work I build apps end to end — client, backend and release — to explore areas I haven't covered professionally, particularly across gaming and personal development.</p>
-    <p class="intro"><strong>Every project below was designed and developed solely by me.</strong> Engine, UI, animation, server, store listing, deploy.</p>
 
     <p class="ledger mono">
       <span>2018 → 2026</span>
@@ -343,9 +342,9 @@ dialog.lb::backdrop{background:rgba(6,11,22,.9)}
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.3 1.9 1.3 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.6 4.7 18.6 5 18.6 5c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></svg>
         github.com/hussien4321
       </a>
-      <a class="cta" href="tel:+821099357269">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
-        +82 10-9935-7269
+      <a class="cta" href="assets/Hussien_Elmi_CV.pdf" download>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
+        Download CV
       </a>
     </div>
   </header>
@@ -384,13 +383,12 @@ dialog.lb::backdrop{background:rgba(6,11,22,.9)}
           <li>Designed the host↔client layer so a big screen and a pocketful of phones exchange state and drive game logic in real time, through a single document and no direct connection.</li>
           <li>Built per-state animation with GSAP, so every phase of every game — prompt, wait, reveal, score — gets its own beat.</li>
           <li>Designed the party games themselves, drawing on years of board gaming.</li>
-          <li>Used Claude Code throughout to move faster and ship updates in a single sitting.</li>
+          <li>Used Claude Code throughout to move faster and ship updates quickly.</li>
         </ul>
         <dl class="facts">
           <div><dt>Playable games</dt><dd>4 — and counting</dd></div>
-          <div><dt>Shape</dt><dd>2 apps, 1 shared document</dd></div>
-          <div><dt>Code</dt><dd>~22,000 lines TypeScript</dd></div>
-          <div><dt>Engine tests</dt><dd>12 suites, rules only</dd></div>
+          <div><dt>Architecture</dt><dd>Host + player apps, synced through one Firestore document</dd></div>
+          <div><dt>Engine tests</dt><dd>12 suites covering game-rule logic</dd></div>
         </dl>
       </div>
 
@@ -420,11 +418,11 @@ dialog.lb::backdrop{background:rgba(6,11,22,.9)}
             <li>Built the guessing mechanic and the tile-reveal animation in Flutter — the flip that colours each letter is the whole feel of the game, so it got the attention.</li>
             <li>Added real-time networking for head-to-head play, with both boards resolving against one shared session.</li>
             <li>Laid the game out as a <strong>BLoC-per-mode</strong> architecture over repository interfaces, so the solo and two-player screens share one engine and differ only in what drives it.</li>
-            <li>Scheduled automatic cleanup of stale sessions every three days, to keep storage costs flat as the game sits in the store.</li>
+            <li>Scheduled automatic cleanup of stale sessions every three days, to keep storage costs flat over time.</li>
           </ul>
           <dl class="facts">
-            <div><dt>Answer words</dt><dd>2,315</dd></div>
-            <div><dt>Accepted guesses</dt><dd>12,972</dd></div>
+            <div><dt>Architecture</dt><dd>BLoC per mode over shared repositories</dd></div>
+            <div><dt>Multiplayer</dt><dd>Real-time Firestore sessions</dd></div>
             <div><dt>State</dt><dd>flutter_bloc + freezed</dd></div>
             <div><dt>Platforms</dt><dd>iOS, Android, Web</dd></div>
           </dl>
@@ -453,16 +451,16 @@ dialog.lb::backdrop{background:rgba(6,11,22,.9)}
         <figure class="shot"><button type="button" data-zoom><img src="assets/firefit.webp" width="620" height="1222" loading="lazy" alt="A FireFit profile screen showing followers, outfits and flames."></button></figure>
         <div class="entry-body">
           <ul class="notes">
-            <li>Follow system with push notifications, so anyone you follow posting a new look reaches you on the lock screen.</li>
-            <li>Weekly and monthly trending feeds surfacing the best-rated looks over a rolling window.</li>
-            <li>Custom search by style, gender and country; a personal lookbook for saving favourites.</li>
+            <li>Built a follow system with push notifications, so new looks from people you follow reach you on the lock screen.</li>
+            <li>Built weekly and monthly trending feeds that surface the best-rated looks over a rolling window.</li>
+            <li>Added custom search by style, gender and country, plus personal lookbooks for saving favourites.</li>
             <li>Wrote the <strong>backend as well as the app</strong> — 33 callable Cloud Functions in TypeScript over Google Cloud SQL, rather than letting the client talk to the database.</li>
-            <li>Media pipeline: uploads are thumbnailed server-side on arrival, so a feed of hundreds of outfits never pulls a full-size photo.</li>
+            <li>Built a media pipeline that thumbnails uploads server-side, so a feed of hundreds of outfits never pulls a full-size photo.</li>
           </ul>
           <dl class="facts">
-            <div><dt>App</dt><dd>196 Dart files, ~22,000 lines</dd></div>
             <div><dt>Backend</dt><dd>33 Cloud Functions, TypeScript</dd></div>
             <div><dt>Data</dt><dd>Google Cloud SQL (MySQL)</dd></div>
+            <div><dt>Media</dt><dd>Server-side thumbnailing</dd></div>
             <div><dt>Lifespan</dt><dd>Shipped, ran, retired</dd></div>
           </dl>
         </div>
@@ -479,8 +477,7 @@ dialog.lb::backdrop{background:rgba(6,11,22,.9)}
         <ul class="stack"><li>Flutter</li><li>Firebase Auth</li><li>FCM</li><li>Cloud Storage</li><li>Cloud Functions</li><li>Cloud SQL</li><li>TypeScript</li><li>Sharp</li><li>SendGrid</li></ul>
         <div class="links">
           <a href="https://github.com/hussien4321/FireFit-Flutter" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.3 1.9 1.3 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.6 4.7 18.6 5 18.6 5c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></svg>App source</a>
-          <a href="https://github.com/hussien4321/mira_mira_back_end" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.3 1.9 1.3 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.6 4.7 18.6 5 18.6 5c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></svg>Backend source</a>
-          <a href="https://skilful-tape-240120.web.app" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>Site</a>
+          <a href="https://github.com/hussien4321/FireFit-BackEnd" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.3 1.9 1.3 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.6 4.7 18.6 5 18.6 5c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></svg>Backend source</a>
         </div>
       </div>
     </article>
@@ -540,10 +537,10 @@ dialog.lb::backdrop{background:rgba(6,11,22,.9)}
         <figure class="shot"><button type="button" data-zoom><img src="assets/todo.webp" width="288" height="512" loading="lazy" alt="Todo Today: tasks each with a 24-hour countdown bar."></button></figure>
         <div class="entry-body">
           <ul class="notes">
-            <li>An animated 24-hour countdown on every task — the deadline is the product, so it had to be the thing you see.</li>
-            <li>End-of-day local notifications nudging you towards whatever is still unticked.</li>
-            <li>Performance graphs built from accumulated history, so a week of the app is readable as a shape rather than a list.</li>
-            <li>Everything on-device in SQLite: no account, no server, no sync to wait for.</li>
+            <li>Built an animated 24-hour countdown on every task, since the deadline is the core of the product and had to be the first thing you see.</li>
+            <li>Added end-of-day local notifications nudging users towards unfinished tasks.</li>
+            <li>Built performance graphs from accumulated task history, so a week of use reads as a trend rather than a list.</li>
+            <li>Kept all data on-device in SQLite, with no account, server or sync to wait for.</li>
           </ul>
           <dl class="facts">
             <div><dt>Storage</dt><dd>SQLite, on device</dd></div>
@@ -571,23 +568,23 @@ dialog.lb::backdrop{background:rgba(6,11,22,.9)}
 
   <footer class="foot" id="contact">
     <h2 class="display">Get in touch</h2>
-    <p>Currently building Partybox. Happy to talk about Flutter, real-time multiplayer, or anything on this page.</p>
+    <p>Available for contract roles with 1 month's notice. Happy to talk about Flutter, real-time multiplayer, or anything on this page.</p>
     <div class="footgrid">
       <a href="mailto:hussien.elmi@outlook.com">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
         <span><span class="fk">Email</span><span class="fv">hussien.elmi@outlook.com</span></span>
       </a>
-      <a href="tel:+821099357269">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
-        <span><span class="fk">Phone</span><span class="fv">+82 10-9935-7269</span></span>
-      </a>
       <a href="https://github.com/hussien4321" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.3 1.9 1.3 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.6 4.7 18.6 5 18.6 5c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></svg>
         <span><span class="fk">GitHub</span><span class="fv">hussien4321</span></span>
       </a>
+      <a href="assets/Hussien_Elmi_CV.pdf" download>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
+        <span><span class="fk">CV</span><span class="fv">Download CV</span></span>
+      </a>
     </div>
     <p class="colophon">
-      Hussien Elmi · Seoul · Every project on this page was designed and built solo.<br>
+      Hussien Elmi<br>
       Set in Bricolage Grotesque, Spline Sans and JetBrains Mono.
     </p>
   </footer>
