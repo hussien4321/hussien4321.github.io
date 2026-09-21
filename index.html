@@ -202,8 +202,14 @@ a{color:inherit}
 /* screens */
 .screens{margin:0 0 26px}
 .screens.mid .shot{max-width:512px}
-/* host and phone, sized so both land on the same height at any width */
-.screens.pair{display:grid;grid-template-columns:3.402fr 1fr;gap:12px;align-items:start}
+/* laptop at full content width, phone overlaid on its lower-right corner */
+.screens.pair{position:relative;display:block;padding-bottom:4%}
+.screens.pair > .shot{margin:0;background:none;border:0;border-radius:0;box-shadow:none}
+.screens.pair > .shot:first-child{filter:drop-shadow(0 14px 26px rgba(0,0,0,.18))}
+.screens.pair > .shot:last-child{
+  position:absolute;right:3%;bottom:0;width:19%;
+  filter:drop-shadow(0 16px 28px rgba(0,0,0,.30));
+}
 
 /* a tall hero sits beside its notes rather than above a dead column */
 .entry-main{
@@ -297,8 +303,8 @@ dialog.lb::backdrop{background:rgba(6,11,22,.9)}
   .rail{grid-column:1;padding-right:0;margin-bottom:12px}
   .rail-inner{display:flex;align-items:baseline;gap:12px}
   .rail-n{margin-top:0}
-  .screens.pair{grid-template-columns:minmax(0,1fr)}
-  .screens.pair .shot:last-child{max-width:220px}
+  .screens.pair{padding-bottom:0}
+  .screens.pair > .shot:last-child{position:static;width:auto;max-width:220px;margin-top:12px}
   .index a{grid-template-columns:minmax(0,1fr)}
   .ix-what{grid-column:1}
   .ix-year{order:-1}
@@ -373,7 +379,7 @@ dialog.lb::backdrop{background:rgba(6,11,22,.9)}
 
       <div class="screens pair">
         <figure class="shot"><button type="button" data-zoom><img src="assets/partybox-host.webp" width="1300" height="794" alt="The Partybox host screen on a laptop: a question and four answer cards, in Korean."></button></figure>
-        <figure class="shot"><button type="button" data-zoom><img src="assets/partybox-client.webp" width="560" height="1172" alt="The Partybox player app on a phone, showing three answer options, in Korean."></button></figure>
+        <figure class="shot"><button type="button" data-zoom><img src="assets/partybox-client.webp" width="560" height="1186" alt="The Partybox player app on a phone, showing three answer options, in Korean."></button></figure>
       </div>
 
       <div class="entry-body">
