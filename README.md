@@ -27,7 +27,7 @@ Everything lives in `index.html`:
   defined once; the dark theme only redefines the same names, so changing an accent
   means changing two values.
 - **Each project** is one `<article class="entry">`. Copy one to add a sixth: the
-  year goes in `.rail`, the summary in `.lede`, the detail bullets in `.notes`, the
+  number goes in `.rail`, the summary in `.lede`, the detail bullets in `.notes`, the
   hard numbers in `.facts`, the stack in `.stack` and the links in `.links`.
 - **Two image layouts.** A wide screenshot uses `.screens.wide` / `.screens.mid` and
   sits above the text; a tall phone screenshot goes in `.entry-main` so the text sits

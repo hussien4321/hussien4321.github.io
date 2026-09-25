@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Hussien Elmi — Senior Flutter Developer</title>
-<meta name="description" content="Hussien Elmi — senior Flutter developer. Five apps built end to end between 2018 and 2026: client, backend and release.">
+<meta name="description" content="Hussien Elmi — senior Flutter developer. Five apps built end to end: client, backend and release.">
 <meta name="author" content="Hussien Elmi">
 <meta property="og:title" content="Hussien Elmi — Senior Flutter Developer">
 <meta property="og:description" content="Five apps built end to end between 2018 and 2026 — client, backend and release.">
@@ -130,14 +130,6 @@ a{color:inherit}
 .intro + .intro{margin-top:12px}
 .intro strong{color:var(--ink);font-weight:500}
 
-.ledger{
-  display:flex;flex-wrap:wrap;gap:8px 10px;align-items:center;
-  margin-top:30px;font-size:12px;letter-spacing:.06em;color:var(--ink-3);
-}
-.ledger span{display:inline-flex;align-items:center;gap:10px}
-.ledger span::after{content:"";width:3px;height:3px;border-radius:50%;background:var(--line);}
-.ledger span:last-child::after{display:none}
-
 .contactrow{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
 .cta{
   display:inline-flex;align-items:center;gap:9px;
@@ -157,14 +149,13 @@ a{color:inherit}
 .index ol{list-style:none;margin:0;padding:0;display:grid;gap:1px;background:var(--line-2);border:1px solid var(--line-2);border-radius:10px;overflow:hidden}
 .index li{background:var(--bg)}
 .index a{
-  display:grid;grid-template-columns:78px minmax(0,1fr);gap:4px 18px;align-items:baseline;
+  display:grid;grid-template-columns:minmax(0,1fr);gap:4px;align-items:baseline;
   padding:13px 16px;text-decoration:none;transition:background .15s ease;
 }
 .index a:hover{background:var(--surface-2)}
 .index a:hover .ix-name{color:var(--accent)}
-.ix-year{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--ink-3);font-variant-numeric:tabular-nums}
 .ix-name{font-weight:600;font-size:16px;transition:color .15s ease}
-.ix-what{grid-column:2;font-size:14px;color:var(--ink-2);line-height:1.45}
+.ix-what{font-size:14px;color:var(--ink-2);line-height:1.45}
 
 /* ---------- entries ---------- */
 .log{padding-block:clamp(48px,7vw,84px) 0}
@@ -183,8 +174,7 @@ a{color:inherit}
 }
 .entry:last-child::before{background:linear-gradient(var(--line) 55%, transparent)}
 .rail{grid-column:1;padding-right:clamp(12px,2vw,20px)}
-.rail-year{font-family:"JetBrains Mono",monospace;font-weight:700;font-size:15px;color:var(--accent);letter-spacing:.01em;font-variant-numeric:tabular-nums}
-.rail-n{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--ink-3);margin-top:4px;letter-spacing:.1em}
+.rail-n{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--ink-3);letter-spacing:.1em}
 
 .entry-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 14px;margin-bottom:10px}
 .entry-head h3{
@@ -302,12 +292,8 @@ dialog.lb::backdrop{background:rgba(6,11,22,.9)}
   .entry::before{display:none}
   .rail{grid-column:1;padding-right:0;margin-bottom:12px}
   .rail-inner{display:flex;align-items:baseline;gap:12px}
-  .rail-n{margin-top:0}
   .screens.pair{padding-bottom:0}
   .screens.pair > .shot:last-child{position:static;width:auto;max-width:220px;margin-top:12px}
-  .index a{grid-template-columns:minmax(0,1fr)}
-  .ix-what{grid-column:1}
-  .ix-year{order:-1}
 }
 @media (prefers-reduced-motion: reduce){
   *{animation:none !important;transition:none !important}
@@ -330,17 +316,15 @@ dialog.lb::backdrop{background:rgba(6,11,22,.9)}
 
     <p class="thesis">Five apps, built <em>end to end</em>.</p>
 
-    <p class="intro">Outside of work, I build apps end to end in areas of interest, from client and backend through to release.</p>
-    <p class="intro">Each one takes on a challenge I haven't tackled before, which is how I keep broadening my skills beyond my day-to-day work.</p>
-
-    <p class="ledger mono">
-      <span>2018 → 2026</span>
-      <span>5 apps across iOS, Android and Web</span>
-      <span>Flutter &amp; TypeScript</span>
-    </p>
+    <p class="intro">Outside of work, I build apps to explore new areas of interest and take on problems I haven't tackled before.</p>
+    <p class="intro">Additionally, these projects give me first-hand experience in project management, design and backend, making me a more well-rounded developer capable of adding valuable insight to any part of the team.</p>
 
     <div class="contactrow">
-      <a class="cta cta-primary" href="mailto:hussien.elmi@outlook.com">
+      <a class="cta cta-primary" href="assets/Hussien_Elmi_CV.pdf" download>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
+        Download CV
+      </a>
+      <a class="cta" href="mailto:hussien.elmi@outlook.com">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
         hussien.elmi@outlook.com
       </a>
@@ -348,21 +332,17 @@ dialog.lb::backdrop{background:rgba(6,11,22,.9)}
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.3 1.9 1.3 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.6 4.7 18.6 5 18.6 5c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></svg>
         github.com/hussien4321
       </a>
-      <a class="cta" href="assets/Hussien_Elmi_CV.pdf" download>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
-        Download CV
-      </a>
     </div>
   </header>
 
   <nav class="index" aria-label="Projects">
-    <h2 class="eyebrow">The build log</h2>
+    <h2 class="eyebrow">Projects</h2>
     <ol>
-      <li><a href="#partybox"><span class="ix-year">2026</span><span class="ix-name">Partybox</span><span class="ix-what">A party-game platform: the game runs on the TV, everyone plays from their own phone.</span></a></li>
-      <li><a href="#wordvs"><span class="ix-year">2024</span><span class="ix-name">Word VS</span><span class="ix-what">Wordle with a two-player mode — same word, live race.</span></a></li>
-      <li><a href="#firefit"><span class="ix-year">2019–24</span><span class="ix-name">FireFit</span><span class="ix-what">A social platform for sharing and rating outfits, with its own backend.</span></a></li>
-      <li><a href="#fastball"><span class="ix-year">2018–21</span><span class="ix-name">Fastball Battle</span><span class="ix-what">An endless baseball game on a hand-rolled sprite engine.</span></a></li>
-      <li><a href="#todo"><span class="ix-year">2018</span><span class="ix-name">Todo Today</span><span class="ix-what">A to-do app where every task expires in 24 hours.</span></a></li>
+      <li><a href="#partybox"><span class="ix-name">Partybox</span><span class="ix-what">A party-game platform: the game runs on the TV, everyone plays from their own phone.</span></a></li>
+      <li><a href="#wordvs"><span class="ix-name">Word VS</span><span class="ix-what">Wordle with a two-player mode — same word, live race.</span></a></li>
+      <li><a href="#firefit"><span class="ix-name">FireFit</span><span class="ix-what">A social platform for sharing and rating outfits, with its own backend.</span></a></li>
+      <li><a href="#fastball"><span class="ix-name">Fastball Battle</span><span class="ix-what">An endless baseball game on a hand-rolled sprite engine.</span></a></li>
+      <li><a href="#todo"><span class="ix-name">Todo Today</span><span class="ix-what">A to-do app where every task expires in 24 hours.</span></a></li>
     </ol>
   </nav>
 
@@ -370,7 +350,7 @@ dialog.lb::backdrop{background:rgba(6,11,22,.9)}
 
     <!-- ============ PARTYBOX ============ -->
     <article class="entry" id="partybox">
-      <div class="rail"><div class="rail-inner"><div class="rail-year">2026</div><div class="rail-n">01</div></div></div>
+      <div class="rail"><div class="rail-inner"><div class="rail-n">01</div></div></div>
 
       <div class="entry-head">
         <h3>Partybox</h3>
@@ -409,7 +389,7 @@ dialog.lb::backdrop{background:rgba(6,11,22,.9)}
 
     <!-- ============ WORD VS ============ -->
     <article class="entry" id="wordvs">
-      <div class="rail"><div class="rail-inner"><div class="rail-year">2024</div><div class="rail-n">02</div></div></div>
+      <div class="rail"><div class="rail-inner"><div class="rail-n">02</div></div></div>
 
       <div class="entry-head">
         <h3>Word VS</h3>
@@ -446,11 +426,11 @@ dialog.lb::backdrop{background:rgba(6,11,22,.9)}
 
     <!-- ============ FIREFIT ============ -->
     <article class="entry" id="firefit">
-      <div class="rail"><div class="rail-inner"><div class="rail-year">2019–24</div><div class="rail-n">03</div></div></div>
+      <div class="rail"><div class="rail-inner"><div class="rail-n">03</div></div></div>
 
       <div class="entry-head">
         <h3>FireFit</h3>
-        <span class="chip">Full stack · Retired</span>
+        <span class="chip">Full stack</span>
       </div>
       <p class="lede">A social platform for fashion: post the fit, the room rates it out of five flames. The biggest of these by some distance — a full social graph, a media pipeline and a custom backend behind it.</p>
 
@@ -491,7 +471,7 @@ dialog.lb::backdrop{background:rgba(6,11,22,.9)}
 
     <!-- ============ FASTBALL ============ -->
     <article class="entry" id="fastball">
-      <div class="rail"><div class="rail-inner"><div class="rail-year">2018–21</div><div class="rail-n">04</div></div></div>
+      <div class="rail"><div class="rail-inner"><div class="rail-n">04</div></div></div>
 
       <div class="entry-head">
         <h3>Fastball Battle</h3>
@@ -532,11 +512,11 @@ dialog.lb::backdrop{background:rgba(6,11,22,.9)}
 
     <!-- ============ TODO TODAY ============ -->
     <article class="entry" id="todo">
-      <div class="rail"><div class="rail-inner"><div class="rail-year">2018</div><div class="rail-n">05</div></div></div>
+      <div class="rail"><div class="rail-inner"><div class="rail-n">05</div></div></div>
 
       <div class="entry-head">
         <h3>Todo Today</h3>
-        <span class="chip">The first one</span>
+        <span class="chip">Offline-first</span>
       </div>
       <p class="lede">A to-do app with one rule: every task you add is given exactly 24 hours. The clock starts the moment you write it down, and at the end of the day it's gone either way.</p>
 
