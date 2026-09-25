@@ -23,9 +23,8 @@ If it doesn't appear: Settings → Pages → Source → *Deploy from a branch* �
 
 Everything lives in `index.html`:
 
-- **Colours** are CSS custom properties at the top (`:root`). The light palette is
-  defined once; the dark theme only redefines the same names, so changing an accent
-  means changing two values.
+- **Colours** are CSS custom properties at the top (`:root`). The site is dark-only,
+  so the palette is defined once and changing an accent means changing one value.
 - **Each project** is one `<article class="entry">`. Copy one to add a sixth: the
   number goes in `.rail`, the summary in `.lede`, the detail bullets in `.notes`, the
   hard numbers in `.facts`, the stack in `.stack` and the links in `.links`.

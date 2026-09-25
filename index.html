@@ -13,46 +13,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=JetBrains+Mono:wght@400;500;700&family=Spline+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-/* ---------- tokens: complete light palette on bare :root ---------- */
+/* ---------- tokens: dark palette ---------- */
 :root{
-  --bg:#E8EBF1;
-  --surface:#FFFFFF;
-  --surface-2:#F1F4F9;
-  --plate:#DFE5F0;           /* the surface a screenshot sits on */
-  --ink:#0D1526;
-  --ink-2:#48536D;
-  --ink-3:#6C7791;
-  --line:#CAD2E0;
-  --line-2:#DFE4EE;
-  --accent:#A8540A;
-  --accent-ink:#FFFFFF;
-  --signal:#0A6B59;
-  --signal-bg:#D8ECE6;
-  --shadow:0 1px 2px rgba(13,21,38,.06), 0 8px 24px -12px rgba(13,21,38,.22);
-  --focus:#A8540A;
-  color-scheme:light;
-}
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --bg:#0A1020;
-    --surface:#121A2B;
-    --surface-2:#172134;
-    --plate:#060B16;
-    --ink:#E7ECF6;
-    --ink-2:#98A4BC;
-    --ink-3:#77839B;
-    --line:#26314A;
-    --line-2:#1D2639;
-    --accent:#F0A340;
-    --accent-ink:#0A1020;
-    --signal:#48DCBB;
-    --signal-bg:#0E2C2A;
-    --shadow:0 1px 2px rgba(0,0,0,.4), 0 14px 32px -16px rgba(0,0,0,.7);
-    --focus:#F0A340;
-    color-scheme:dark;
-  }
-}
-:root[data-theme="dark"]{
   --bg:#0A1020;
   --surface:#121A2B;
   --surface-2:#172134;
@@ -100,13 +62,6 @@ a{color:inherit}
 }
 .wordmark{font-family:"JetBrains Mono",monospace;font-size:12.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2)}
 .wordmark b{color:var(--accent);font-weight:700}
-.themetoggle{
-  font-family:"JetBrains Mono",monospace;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
-  background:var(--surface);color:var(--ink-2);
-  border:1px solid var(--line);border-radius:999px;
-  padding:7px 14px;cursor:pointer;line-height:1;
-}
-.themetoggle:hover{color:var(--ink);border-color:var(--ink-3)}
 
 /* ---------- masthead ---------- */
 .masthead{padding-block:clamp(40px,7vw,78px) clamp(30px,5vw,50px)}
@@ -307,7 +262,6 @@ dialog.lb::backdrop{background:rgba(6,11,22,.9)}
 
   <div class="topbar">
     <div class="wordmark">HE<b>.</b></div>
-    <button class="themetoggle" id="themetoggle" type="button" aria-label="Switch colour theme">Theme</button>
   </div>
 
   <header class="masthead">
@@ -588,27 +542,6 @@ dialog.lb::backdrop{background:rgba(6,11,22,.9)}
 <script>
 (function(){
   "use strict";
-  var root = document.documentElement;
-
-  /* theme toggle — persisted per browser, tolerant of blocked storage */
-  function stored(){ try { return localStorage.getItem("he-theme"); } catch(e){ return null; } }
-  var saved = stored();
-  if (saved === "dark" || saved === "light") root.setAttribute("data-theme", saved);
-
-  function current(){
-    var set = root.getAttribute("data-theme");
-    if (set) return set;
-    return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-  }
-  var btn = document.getElementById("themetoggle");
-  function label(){ btn.textContent = current() === "dark" ? "Light" : "Dark"; }
-  label();
-  btn.addEventListener("click", function(){
-    var next = current() === "dark" ? "light" : "dark";
-    root.setAttribute("data-theme", next);
-    try { localStorage.setItem("he-theme", next); } catch(e){}
-    label();
-  });
 
   /* lightbox */
   var lb = document.getElementById("lightbox");
