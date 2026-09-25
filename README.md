@@ -6,7 +6,7 @@ Personal portfolio — served by GitHub Pages at **https://hussien4321.github.io
 
 ```
 index.html        the whole site: markup, styles and script in one file
-assets/*.webp     screenshots, resized and compressed (356 KB total)
+assets/*.webp     screenshots, resized and compressed (324 KB total)
 .nojekyll         tells Pages to serve the files as-is, no Jekyll build
 ```
 
@@ -27,10 +27,12 @@ Everything lives in `index.html`:
   so the palette is defined once and changing an accent means changing one value.
 - **Each project** is one `<article class="entry">`. Copy one to add a sixth: the
   number goes in `.rail`, the summary in `.lede`, the detail bullets in `.notes`, the
-  hard numbers in `.facts`, the stack in `.stack` and the links in `.links`.
-- **Two image layouts.** A wide screenshot uses `.screens.wide` / `.screens.mid` and
-  sits above the text; a tall phone screenshot goes in `.entry-main` so the text sits
-  beside it instead of leaving an empty column. Small secondary shots go in `.strip`.
+  grouped stack in `.built` and the links in `.links`.
+- **Two image layouts.** A wide screenshot uses `.screens.mid` (or `.screens.pair` for
+  laptop + phone) and sits above the text; a tall phone screenshot goes in
+  `.entry-main` so the text sits beside it instead of leaving an empty column
+  (`.entry-main.compact` for a smaller one). Small secondary shots go in `.strip`,
+  which scrolls sideways when it runs out of room.
 - **Images** should be WebP and no wider than they are displayed — the page loads in
   well under half a megabyte, which is most of why it feels instant.
 
